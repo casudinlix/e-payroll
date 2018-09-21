@@ -1,4 +1,4 @@
-
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
   <div class="page-content">

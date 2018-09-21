@@ -381,7 +381,7 @@ $config['encryption_key'] = 'xxfdd231223@@#';
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'Payroll-Cas';
-$config['sess_expiration'] = 6200;
+$config['sess_expiration'] = 3600;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;

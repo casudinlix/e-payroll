@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo tema()?>admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>sweat/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="<?php echo tema()?>123.png"/>
+<link rel="shortcut icon" href="<?php echo tema()?>favicon.png"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- BEGIN LOGO -->
 <div class="logo">
 	<a href="#">
-	<!-- <img src="<?php echo tema()?>COBA.png" alt="" height="50px" width="150px"/> -->
+	<img src="<?php echo tema()?>logo.png" alt="" height="150px" width="250px"/>
 	</a>
 </div>
 <!-- END LOGO -->

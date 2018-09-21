@@ -7,7 +7,7 @@ class Pilih extends MX_Controller{
   public function __construct()
   {
     parent::__construct();
-    if (empty($this->session->userdata('login'))) {
+    if (empty($this->session->userdata('user_id'))) {
       $this->session->set_flashdata('error', 'value');
       redirect('welcome/index','refresh');
     }

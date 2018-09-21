@@ -667,9 +667,12 @@
 <script src="../../assets/global/plugins/respond.min.js"></script>
 <script src="../../assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
+
+<script src="<?php echo tema()?>sweat/sweetalert2.all.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
 <script src="<?php echo tema()?>global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
@@ -678,11 +681,17 @@
 <script src="<?php echo tema()?>global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <script src="<?php echo tema()?>global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
 <script>
 jQuery(document).ready(function() {
  Metronic.init(); // init metronic core components
@@ -700,7 +709,230 @@ jQuery(document).ready(function() {
       });
   });
   </script>
+  <?php if ($this->session->flashdata('denied')): ?>
+  <script type="text/javascript">
+  swal(
+  'You Not Allowed Access!',
+  'Please Contact Andministrator',
+  'error'
+  )
+  </script>
+  <?php endif; ?>
+  <?php if ($this->session->flashdata('error')): ?>
+  <script type="text/javascript">
+  swal(
+  'Error!!',
+  'Please Contact Andministrator',
+  'error'
+  )
+  </script>
+  <?php endif; ?>
+  <?php if ($this->session->flashdata('success')): ?>
+  <script type="text/javascript">
+  swal(
+  'Success!',
+  'Data Has Ben Saved',
+  'success'
+  )
+  </script>
+  <?php endif; ?>
 <!-- END JAVASCRIPTS -->
+<script>
+$('.data-table').dataTable({
+	"language": {
+	                "aria": {
+	                    "sortAscending": ": activate to sort column ascending",
+	                    "sortDescending": ": activate to sort column descending"
+	                },
+	                "emptyTable": "No data available in table",
+	                "info": "Showing _START_ to _END_ of _TOTAL_ entries",
+	                "infoEmpty": "No entries found",
+	                "infoFiltered": "(filtered1 from _MAX_ total entries)",
+	                "lengthMenu": "Show _MENU_ entries",
+	                "search": "Search:",
+	                "zeroRecords": "No matching records found"
+	            },
+							"lengthMenu": [
+                [5, 15, 20, -1],
+                [5, 15, 20, "All"] // change per page values here
+            ],
+
+});
+$('.select2').select2({
+		 placeholder: 'Select an option',
+		 allowClear: 'TRUE'
+});
+
+</script>
+<script>
+function hapusrole($d)
+{
+var id = $d;
+
+ var url1= "<?php echo site_url() ?>";
+ const swalWithBootstrapButtons = swal.mixin({
+confirmButtonClass: 'btn btn-info',
+cancelButtonClass: 'btn btn-danger',
+buttonsStyling: false,
+})
+
+swalWithBootstrapButtons({
+title: 'Delete Role?',
+text: "",
+type: 'question',
+showCancelButton: true,
+confirmButtonText: 'Yes!',
+cancelButtonText: 'No!',
+reverseButtons: true,
+showLoaderOnConfirm: true,
+
+}).then((result) => {
+if (result.value) {
+$.ajax({
+url: url1+"settings/role/delete",
+type: "POST",
+data: {id:id}
+}),
+setTimeout(function () {
+swal("Loading..");
+window.location.reload();
+}, 2000);
+swal({
+position: 'top-end',
+type: 'success',
+title: 'Prosessing',
+showConfirmButton: false,
+timer: 1500
+})
+swal.showLoading()
+timerInterval = setInterval(() => {
+swal.getContent().querySelector('strong')
+.textContent = swal.getTimerLeft()
+}, 100)
+} else if (
+// Read more about handling dismissals
+result.dismiss === swal.DismissReason.cancel
+) {
+swalWithBootstrapButtons(
+'Cancelled',
+'Menu '+id+' Safe',
+'error'
+)
+}
+})};
+
+function hapusmenu($d)
+{
+var id = $d;
+
+ var url1= "<?php echo site_url() ?>";
+ const swalWithBootstrapButtons = swal.mixin({
+confirmButtonClass: 'btn btn-info',
+cancelButtonClass: 'btn btn-danger',
+buttonsStyling: false,
+})
+
+swalWithBootstrapButtons({
+title: 'Delete Menu?',
+text: "",
+type: 'question',
+showCancelButton: true,
+confirmButtonText: 'Yes!',
+cancelButtonText: 'No!',
+reverseButtons: true,
+showLoaderOnConfirm: true,
+
+}).then((result) => {
+if (result.value) {
+$.ajax({
+url: url1+"settings/menu/delete",
+type: "POST",
+data: {id:id}
+}),
+setTimeout(function () {
+swal("Loading..");
+window.location.reload();
+}, 2000);
+swal({
+position: 'top-end',
+type: 'success',
+title: 'Prosessing',
+showConfirmButton: false,
+timer: 1500
+})
+swal.showLoading()
+timerInterval = setInterval(() => {
+swal.getContent().querySelector('strong')
+.textContent = swal.getTimerLeft()
+}, 100)
+} else if (
+// Read more about handling dismissals
+result.dismiss === swal.DismissReason.cancel
+) {
+swalWithBootstrapButtons(
+'Cancelled',
+'Menu '+id+' Safe',
+'error'
+)
+}
+})};
+
+function hapuscompany($d)
+{
+var id = $d;
+
+ var url1= "<?php echo site_url() ?>";
+ const swalWithBootstrapButtons = swal.mixin({
+confirmButtonClass: 'btn btn-info',
+cancelButtonClass: 'btn btn-danger',
+buttonsStyling: false,
+})
+
+swalWithBootstrapButtons({
+title: 'Delete Company?',
+text: "",
+type: 'question',
+showCancelButton: true,
+confirmButtonText: 'Yes!',
+cancelButtonText: 'No!',
+reverseButtons: true,
+showLoaderOnConfirm: true,
+
+}).then((result) => {
+if (result.value) {
+$.ajax({
+url: url1+"settings/company/delete",
+type: "POST",
+data: {id:id}
+}),
+setTimeout(function () {
+swal("Loading..");
+window.location.reload();
+}, 2000);
+swal({
+position: 'top-end',
+type: 'success',
+title: 'Prosessing',
+showConfirmButton: false,
+timer: 1500
+})
+swal.showLoading()
+timerInterval = setInterval(() => {
+swal.getContent().querySelector('strong')
+.textContent = swal.getTimerLeft()
+}, 100)
+} else if (
+// Read more about handling dismissals
+result.dismiss === swal.DismissReason.cancel
+) {
+swalWithBootstrapButtons(
+'Cancelled',
+'Menu '+id+' Safe',
+'error'
+)
+}
+})};
+</script>
 </body>
 <!-- END BODY -->
 </html>

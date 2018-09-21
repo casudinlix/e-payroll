@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo tema()?>admin/layout/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="<?php echo tema()?>admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="shortcut icon" href="<?php echo tema()?>favicon.png"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</a>
 	</div>
 	<div class="page-body">
-		<img class="page-lock-img" src="<?php echo tema() ?>icon.png" alt="">
+		<img class="page-lock-img" src="<?php echo tema() ?>logo.png" alt="">
 		<div class="page-lock-info">
 			<h1><?php echo $this->session->userdata('username'); ?></h1>
 			<span class="email">
@@ -64,10 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</span>
 				</div>
 				<!-- /input-group -->
-				<div class="relogin">
-					<a href="<?php echo site_url('welcome/logout') ?>">
-					Logout ? </a>
-				</div>
+
 			</form>
 		</div>
 	</div>
@@ -90,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo tema()?>global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="../../assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <script src="<?php echo tema()?>global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/layout.js" type="text/javascript"></script>

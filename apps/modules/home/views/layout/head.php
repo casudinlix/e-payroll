@@ -11,11 +11,16 @@
 <meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="<?php echo tema()?>sweat/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link href="<?php echo tema()?>global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo tema()?>global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo tema()?>global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css"/>
@@ -24,7 +29,7 @@
 <link id="style_color" href="<?php echo tema()?>admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="shortcut icon" href="<?php echo tema() ?>favicon.png"/>
 </head>
 <body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
 <!-- BEGIN HEADER -->
@@ -360,9 +365,9 @@
         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-          <img alt="" class="img-circle" src="../../assets/admin/layout/img/avatar3_small.jpg"/>
+          <img alt="" class="img-circle" src="<?php echo tema()?>avatar.png"/>
           <span class="username username-hide-on-mobile">
-          Nick </span>
+          <?php echo $this->session->userdata('username'); ?> </span>
           <i class="fa fa-angle-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-default">
@@ -393,7 +398,7 @@
               <i class="icon-lock"></i> Change Company </a>
             </li>
             <li>
-              <a href="<?php echo site_url('welcome/logout') ?>">
+              <a href="<?php echo site_url('home/logout') ?>">
               <i class="icon-key"></i> Log Out </a>
             </li>
           </ul>

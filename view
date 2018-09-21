@@ -1,1 +1,7 @@
-select `db_hr_dev`.`tbl_employee`.`id` AS `id`,`db_hr_dev`.`tbl_employee`.`fid` AS `fid`,`db_hr_dev`.`tbl_users`.`username` AS `username`,`db_hr_dev`.`tbl_users`.`pass` AS `pass`,`db_hr_dev`.`tbl_users`.`group_id` AS `group_id`,`db_hr_dev`.`tbl_users`.`status` AS `status` ,tbl_employee.email from (`db_hr_dev`.`tbl_employee` join `db_hr_dev`.`tbl_users` on((`db_hr_dev`.`tbl_employee`.`id` = `db_hr_dev`.`tbl_users`.`id_emp`)))
+select `db_hr_dev`.`tbl_users`.`id` AS `user_id`,`db_hr_dev`.`tbl_employee`.`id` AS `emp_id`,`db_hr_dev`.`tbl_employee`.`fid` AS `fid`,`db_hr_dev`.`tbl_users`.`username` AS `username`,`db_hr_dev`.`tbl_users`.`pass` AS `pass`,`db_hr_dev`.`tbl_users`.`group_id` AS `group_id`,tbl_employee.emp_nip,tbl_employee.new_nip,`db_hr_dev`.`tbl_users`.`status` AS `status`,`db_hr_dev`.`tbl_employee`.`email` AS `email` from (`db_hr_dev`.`tbl_employee` join `db_hr_dev`.`tbl_users` on((`db_hr_dev`.`tbl_employee`.`id` = `db_hr_dev`.`tbl_users`.`id_emp`)))
+
+company view
+SELECT tbl_company_permission.id,tbl_company.company_name,
+tbl_users.username
+FROM tbl_company_permission INNER JOIN tbl_users on(tbl_company_permission.user_id=tbl_users.id)
+INNER JOIN tbl_company ON(tbl_company.id=tbl_company_permission.company_id)
