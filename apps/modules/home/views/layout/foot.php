@@ -654,7 +654,7 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
 <div class="page-footer-inner">
-   2014 &copy; Metronic by keenthemes.
+   <?php echo date('Y') ?> &copy; <?php echo $this->app->getapp()->appname." Develop By  ".$this->app->getapp()->author ?>.
 </div>
 <div class="scroll-to-top">
   <i class="icon-arrow-up"></i>
@@ -672,6 +672,10 @@
 <script src="<?php echo tema()?>global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+
+
 
 <script src="<?php echo tema()?>global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -687,17 +691,29 @@
 <script src="<?php echo tema()?>global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+
 <script src="<?php echo tema()?>admin/layout/scripts/demo.js" type="text/javascript"></script>
+
+
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/clockface/js/clockface.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="<?php echo tema()?>admin/pages/scripts/components-pickers.js"></script>
 <script>
 jQuery(document).ready(function() {
  Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
+ComponentsPickers.init();
 });
 </script>
 <script type="text/javascript">
@@ -739,6 +755,7 @@ jQuery(document).ready(function() {
 <!-- END JAVASCRIPTS -->
 <script>
 $('.data-table').dataTable({
+  "processing": true,
 	"language": {
 	                "aria": {
 	                    "sortAscending": ": activate to sort column ascending",
@@ -756,6 +773,7 @@ $('.data-table').dataTable({
                 [5, 15, 20, -1],
                 [5, 15, 20, "All"] // change per page values here
             ],
+
 
 });
 $('.select2').select2({
@@ -825,7 +843,7 @@ function hapusmenu($d)
 {
 var id = $d;
 
- var url1= "<?php echo site_url() ?>";
+ var url1= "<?php echo site_url()?>";
  const swalWithBootstrapButtons = swal.mixin({
 confirmButtonClass: 'btn btn-info',
 cancelButtonClass: 'btn btn-danger',

@@ -74,7 +74,7 @@
               </td>
 
 
-              <td><a href="<?php echo site_url('settings/group/edit/').clean($key->id) ?>" class="btn btn-warning" title="Edit"><i class="icon icon-note"></i></a><a href="#" class="btn btn-danger" title="Non Active" onClick="nonactive('<?php echo $key->id ?>')"><i class="fa fa-power-off"></i></a>
+              <td><a href="<?php echo site_url('settings/group/edit/'.clean($key->id)) ?>" class="btn btn-warning" title="Edit"><i class="icon icon-note"></i></a><a href="#" class="btn btn-danger" title="Non Active" onClick="nonactive('<?php echo $key->id ?>')"><i class="fa fa-power-off"></i></a>
               </td>
                 <?php endforeach; ?>
             </tr>

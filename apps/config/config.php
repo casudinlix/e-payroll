@@ -66,7 +66,7 @@ $config['uri_protocol']	= 'REQUEST_URI';
 |
 | https://codeigniter.com/user_guide/general/urls.html
 */
-$config['url_suffix'] = '';
+$config['url_suffix'] = '.jsp';
 
 /*
 |--------------------------------------------------------------------------
@@ -217,7 +217,7 @@ $config['allow_get_array'] = TRUE;
 |	3 = Informational Messages
 |	4 = All Messages
 |
-| You can also pass an array with threshold levels to show individual error types
+| You c also pass an array with threshold levels to show individual error types
 |
 | 	array(2) = Debug Messages, without Error Messages
 |
@@ -225,7 +225,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -236,7 +236,7 @@ $config['log_threshold'] = 0;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = 'apps/logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -250,7 +250,7 @@ $config['log_path'] = '';
 | Note: Leaving it blank will default to 'php'.
 |
 */
-$config['log_file_extension'] = '';
+$config['log_file_extension'] = '.txt';
 
 /*
 |--------------------------------------------------------------------------

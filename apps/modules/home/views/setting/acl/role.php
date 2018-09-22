@@ -94,7 +94,7 @@
                  <?php echo $key->update_by ?>
               </td>
 
-              <td><a href="<?php echo site_url('settings/role/edit/').clean($key->id) ?>" class="btn btn-warning" title="Edit"><i class="icon icon-note"></i></a>
+              <td><a href="<?php echo site_url('settings/role/edit/'.clean($key->id) )?>" class="btn btn-warning" title="Edit"><i class="icon icon-note"></i></a>
               </td>
                 <?php endforeach; ?>
             </tr>

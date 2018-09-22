@@ -16,6 +16,13 @@
 <link href="<?php echo tema()?>global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/clockface/css/clockface.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-datepicker/css/datepicker3.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-colorpicker/css/colorpicker.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+<!-- END PAGE LEVEL STYLES -->
 <link href="<?php echo tema()?>global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
@@ -38,7 +45,7 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="index.html">
+			<a href="<?php echo site_url('home') ?>">
 			<img src="<?php echo tema() ?>admin/layout/img/logo.png" alt="logo" class="logo-default"/>
 			</a>
 			<div class="menu-toggler sidebar-toggler">
@@ -429,31 +436,6 @@
 		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 		<div class="page-sidebar navbar-collapse collapse">
       <ul class="page-sidebar-menu page-sidebar-menu-light " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="margin-top:25px;">
-        <li class="">
-          <a href="javascript:;">
-          <i class="icon-home"></i>
-          <span class="title">Dashboard</span>
-          <span class="arrow "></span>
-          </a>
-          <ul class="sub-menu">
-            <li>
-              <a href="index.html">
-              <i class="icon-bar-chart"></i>
-              Default Dashboard</a>
-            </li>
-            <li>
-              <a href="index_2.html">
-              <i class="icon-bulb"></i>
-              New Dashboard #1</a>
-            </li>
-            <li>
-              <a href="index_3.html">
-              <i class="icon-graph"></i>
-              New Dashboard #2</a>
-            </li>
-          </ul>
-        </li>
-
         <li class="heading">
           <h3 class="uppercase"><?php echo $this->app->getcompanydetil($this->session->userdata('company_id'))->company_name ?></h3>
         </li>

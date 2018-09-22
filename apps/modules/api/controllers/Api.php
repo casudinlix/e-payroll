@@ -7,15 +7,17 @@ class Api extends MX_Controller{
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
-    if (!$this->input->is_ajax_request()) {
-      $this->session->set_flashdata('denied', 'value');
-    }
+
 
 
   }
 
   function index()
   {
+    // $this->db->select_max('id');
+    // $cek=$this->db->get('tbl_employee');
+    // echo $cek->row()->id;
+    echo $this->app->maxid('id','tbl_employee')->id;
 
   }
   function nonactive(){

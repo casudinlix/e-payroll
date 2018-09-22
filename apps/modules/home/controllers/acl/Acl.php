@@ -144,8 +144,7 @@ class Acl extends MX_Controller{
       $this->db->trans_begin();
     			$value = [
     				'nama_group'			=> $this->input->post('group',TRUE),
-            'add_by'=>$this->session->userdata('username')
-];
+            'add_by'=>$this->session->userdata('username')];
 
     $data_group = $value;
 

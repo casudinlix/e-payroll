@@ -1,0 +1,118 @@
+ERROR - 2018-09-22 16:02:45 --> Query error: Unknown column 'id' in 'order clause' - Invalid query: SELECT *
+FROM `view_employee`
+ORDER BY `id` DESC
+ERROR - 2018-09-22 16:02:45 --> Query error: Unknown column 'id' in 'order clause' - Invalid query: SELECT *
+FROM `view_employee`
+ORDER BY `id` DESC
+ERROR - 2018-09-22 16:02:50 --> Query error: Unknown column 'id' in 'order clause' - Invalid query: SELECT *
+FROM `view_employee`
+ORDER BY `id` DESC
+ERROR - 2018-09-22 16:02:58 --> Query error: Unknown column 'id' in 'order clause' - Invalid query: SELECT *
+FROM `view_employee`
+ORDER BY `id` DESC
+ERROR - 2018-09-22 16:03:28 --> Query error: Unknown column 'id' in 'order clause' - Invalid query: SELECT *
+FROM `view_employee`
+ORDER BY `id` DESC
+ERROR - 2018-09-22 16:03:57 --> Severity: Notice --> Undefined variable: cek /var/www/e-pay/apps/modules/report/controllers/Report.php 49
+ERROR - 2018-09-22 16:03:57 --> Severity: error --> Exception: Unsupported operand types /var/www/e-pay/apps/modules/report/controllers/Report.php 49
+ERROR - 2018-09-22 16:03:57 --> Severity: Notice --> Undefined variable: cek /var/www/e-pay/apps/modules/report/controllers/Report.php 49
+ERROR - 2018-09-22 16:03:57 --> Severity: error --> Exception: Unsupported operand types /var/www/e-pay/apps/modules/report/controllers/Report.php 49
+ERROR - 2018-09-22 16:04:02 --> Severity: Notice --> Undefined variable: cek /var/www/e-pay/apps/modules/report/controllers/Report.php 49
+ERROR - 2018-09-22 16:04:02 --> Severity: error --> Exception: Unsupported operand types /var/www/e-pay/apps/modules/report/controllers/Report.php 49
+ERROR - 2018-09-22 17:05:03 --> Severity: Notice --> Undefined property: stdClass::$group_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 113
+ERROR - 2018-09-22 17:05:03 --> Severity: Notice --> Undefined property: stdClass::$group_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 113
+ERROR - 2018-09-22 20:21:06 --> Severity: Notice --> Undefined index: HTTP_REFERER /var/www/e-pay/apps/modules/home/controllers/master/Master.php 13
+ERROR - 2018-09-22 20:23:52 --> Severity: Notice --> Undefined variable: agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 203
+ERROR - 2018-09-22 20:23:52 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/e-pay/apps/modules/home/views/master/employee/add.php 203
+ERROR - 2018-09-22 20:24:11 --> Severity: Notice --> Undefined variable: agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 203
+ERROR - 2018-09-22 20:24:11 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/e-pay/apps/modules/home/views/master/employee/add.php 203
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 20:51:18 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 250
+ERROR - 2018-09-22 21:02:06 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:02:06 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:02:06 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:02:06 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:08:58 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:08:58 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:08:58 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:08:58 --> Severity: Notice --> Undefined property: stdClass::$company_name /var/www/e-pay/apps/modules/home/views/master/employee/add.php 292
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:20:30 --> Severity: Notice --> Undefined property: stdClass::$nama_agama /var/www/e-pay/apps/modules/home/views/master/employee/add.php 217
+ERROR - 2018-09-22 21:36:15 --> Severity: Notice --> Undefined index: HTTP_REFERER /var/www/e-pay/apps/modules/home/controllers/master/Master.php 121
+ERROR - 2018-09-22 22:33:20 --> Query error: Column 'bank_type' cannot be null - Invalid query: INSERT INTO `tbl_employee` (`fid`, `emp_nip`, `new_nip`, `emp_name`, `birth_date`, `sex`, `merital_status`, `phone`, `email`, `address`, `agama_id`, `dept_id`, `position_id`, `join_date`, `emp_type_id`, `status`, `contract_end`, `bank_account`, `bank_type`, `npwp`, `bpjskes`, `bpjstk`, `edu_id`, `company_id`) VALUES ('002', '18090001', '18090001', 'Tes Input', '1990-06-20', 'MALE', 'MENDUDA', '08532112521', 'employe@mic.ac.id', 'bekasi\r\nbekasi\r\njakt', '1', '1', '48', '2018-09-22', '3', 'active', '01/01/2019', '362121422525552', NULL, '36212521020236006', '0002152110', '01/01/2019', '9', '7')
+ERROR - 2018-09-22 22:57:48 --> Severity: 4096 --> Object of class Api could not be converted to string /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:57:48 --> Severity: Notice --> Undefined property: CI::$ /var/www/e-pay/apps/third_party/MX/Controller.php 59
+ERROR - 2018-09-22 22:57:48 --> Severity: Notice --> Trying to get property 'db' of non-object /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:57:48 --> Severity: error --> Exception: Call to a member function get() on null /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:58:51 --> Severity: 4096 --> Object of class Api could not be converted to string /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:58:51 --> Severity: Notice --> Undefined property: CI::$ /var/www/e-pay/apps/third_party/MX/Controller.php 59
+ERROR - 2018-09-22 22:58:51 --> Severity: Notice --> Trying to get property 'db' of non-object /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:58:51 --> Severity: error --> Exception: Call to a member function get() on null /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:58:52 --> Severity: 4096 --> Object of class Api could not be converted to string /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:58:52 --> Severity: Notice --> Undefined property: CI::$ /var/www/e-pay/apps/third_party/MX/Controller.php 59
+ERROR - 2018-09-22 22:58:52 --> Severity: Notice --> Trying to get property 'db' of non-object /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:58:52 --> Severity: error --> Exception: Call to a member function get() on null /var/www/e-pay/apps/modules/api/controllers/Api.php 18
+ERROR - 2018-09-22 22:59:08 --> Severity: 4096 --> Object of class stdClass could not be converted to string /var/www/e-pay/apps/modules/api/controllers/Api.php 19
+ERROR - 2018-09-22 23:00:32 --> Severity: 4096 --> Object of class App_model could not be converted to string /var/www/e-pay/apps/modules/api/controllers/Api.php 20
+ERROR - 2018-09-22 23:00:57 --> Severity: 4096 --> Object of class App_model could not be converted to string /var/www/e-pay/apps/modules/api/controllers/Api.php 20
+ERROR - 2018-09-22 23:01:10 --> Severity: Notice --> Undefined property: CI::$id /var/www/e-pay/system/core/Model.php 73
+ERROR - 2018-09-22 23:02:57 --> Severity: Notice --> Trying to get property 'id' of non-object /var/www/e-pay/apps/modules/api/controllers/Api.php 20
+ERROR - 2018-09-22 23:07:11 --> Severity: error --> Exception: Too few arguments to function App_model::maxid(), 0 passed in /var/www/e-pay/apps/modules/api/controllers/Api.php on line 20 and exactly 2 expected /var/www/e-pay/apps/models/App_model.php 101
+ERROR - 2018-09-22 23:10:32 --> Query error: Unknown column 'user_id' in 'field list' - Invalid query: INSERT INTO `tbl_company` (`user_id`, `company_id`, `add_by`) VALUES ('166', '2', 'Casudin')
+ERROR - 2018-09-22 23:18:11 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`db_hr_dev`.`tbl_company_permission`, CONSTRAINT `tbl_company_permission_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) - Invalid query: INSERT INTO `tbl_company_permission` (`user_id`, `company_id`, `add_by`) VALUES ('167', '2', 'Casudin')
+ERROR - 2018-09-22 23:22:27 --> Severity: error --> Exception: Too few arguments to function App_model::maxid(), 0 passed in /var/www/e-pay/apps/modules/api/controllers/Api.php on line 20 and exactly 2 expected /var/www/e-pay/apps/models/App_model.php 101
+ERROR - 2018-09-22 23:24:11 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`db_hr_dev`.`tbl_company_permission`, CONSTRAINT `tbl_company_permission_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) - Invalid query: INSERT INTO `tbl_company_permission` (`user_id`, `company_id`, `add_by`) VALUES ('168', '2', 'Casudin')
+ERROR - 2018-09-22 23:24:29 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`db_hr_dev`.`tbl_company_permission`, CONSTRAINT `tbl_company_permission_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) - Invalid query: INSERT INTO `tbl_company_permission` (`user_id`, `company_id`, `add_by`) VALUES ('169', '2', 'Casudin')

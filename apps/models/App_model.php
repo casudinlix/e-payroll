@@ -68,4 +68,41 @@ function companyid(){
 function userid(){
   return $this->db->get('tbl_users');
 }
+function getcompany_id(){
+  return $this->db->get_where('view_company',['user_id'=>$this->session->userdata('user_id')]);
+}
+function reportcompany(){
+  return $this->db->get('view_report_company');
+}
+function getidcompany($id){
+  return $this->db->get_where('tbl_company',['id'=>base64_decode($id)]);
+}
+function getemployee($id){
+  return $this->db->get_where('view_employee',['company_id'=>$id]);
+}
+function emptype(){
+  return $this->db->get('tbl_emp_type');
+}
+function dept(){
+return $this->db->get('tbl_dept');
+}
+function position(){
+return $this->db->get('tbl_position');
+}
+function bank(){
+  return $this->db->get('tbl_bank');
+}
+function agama(){
+  return $this->db->get('tbl_agama');
+}
+function edu(){
+  return $this->db->get('tbl_edu');
+}
+function maxid($id,$table){
+  $this->db->select_max($id);
+  $cek=$this->db->get($table)->row();
+
+
+  return $cek;
+}
 }

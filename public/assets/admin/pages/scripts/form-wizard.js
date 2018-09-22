@@ -34,7 +34,7 @@ var FormWizard = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 rules: {
                     //account
-                    username: {
+                    nip: {
                         minlength: 5,
                         required: true
                     },
@@ -111,7 +111,7 @@ var FormWizard = function () {
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit   
+                invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
                     Metronic.scrollTo(error, -200);
@@ -161,7 +161,7 @@ var FormWizard = function () {
                         $(this).html(input.attr("data-title"));
                     } else if ($(this).attr("data-display") == 'payment[]') {
                         var payment = [];
-                        $('[name="payment[]"]:checked', form).each(function(){ 
+                        $('[name="payment[]"]:checked', form).each(function(){
                             payment.push($(this).attr('data-title'));
                         });
                         $(this).html(payment.join("<br>"));

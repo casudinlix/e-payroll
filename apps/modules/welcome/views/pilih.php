@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <select name="company" class="form-control select2" required="true">
             <option value=""></option>
             <?php foreach ($company as $key): ?>
-              <option value="<?php echo $key->id?>"><?php echo $key->company_name ?></option>
+              <option value="<?php echo $key->company_id?>"><?php echo $key->company_name ?></option>
             <?php endforeach; ?>
           </select>
 					<span class="input-group-btn">

@@ -1,7 +1,26 @@
 select `db_hr_dev`.`tbl_users`.`id` AS `user_id`,`db_hr_dev`.`tbl_employee`.`id` AS `emp_id`,`db_hr_dev`.`tbl_employee`.`fid` AS `fid`,`db_hr_dev`.`tbl_users`.`username` AS `username`,`db_hr_dev`.`tbl_users`.`pass` AS `pass`,`db_hr_dev`.`tbl_users`.`group_id` AS `group_id`,tbl_employee.emp_nip,tbl_employee.new_nip,`db_hr_dev`.`tbl_users`.`status` AS `status`,`db_hr_dev`.`tbl_employee`.`email` AS `email` from (`db_hr_dev`.`tbl_employee` join `db_hr_dev`.`tbl_users` on((`db_hr_dev`.`tbl_employee`.`id` = `db_hr_dev`.`tbl_users`.`id_emp`)))
 
 company view
-SELECT tbl_company_permission.id,tbl_company.company_name,
+SELECT tbl_company_permission.id,tbl_company.id company_id,tbl_company.company_name,tbl_users.id as user_id,
 tbl_users.username
 FROM tbl_company_permission INNER JOIN tbl_users on(tbl_company_permission.user_id=tbl_users.id)
 INNER JOIN tbl_company ON(tbl_company.id=tbl_company_permission.company_id)
+
+report company
+SELECT tbl_company.id,
+tbl_company.company_name,tbl_company.phone,
+tbl_company.fax,tbl_company.email,
+COUNT(tbl_employee.company_id) as total_employe
+FROM tbl_company INNER JOIN tbl_employee
+on(tbl_company.id=tbl_employee.company_id)
+GROUP BY tbl_company.id, tbl_company.company_name
+
+view_employee
+SELECT tbl_employee.id as emp_id,
+tbl_employee.fid,tbl_employee.emp_nip,tbl_employee.new_nip,
+tbl_employee.emp_name,tbl_employee.sex,tbl_agama.nama_agama,tbl_employee.company_id,tbl_company.company_name,tbl_dept.dept_name,
+tbl_employee.join_date,tbl_position.position_name, tbl_emp_type.type_name
+FROM tbl_employee INNER JOIN tbl_company on(tbl_employee.company_id=tbl_company.id) inner JOIN tbl_dept
+ON(tbl_employee.dept_id=tbl_dept.id) INNER JOIN tbl_position
+on(tbl_employee.position_id=tbl_position.id)
+INNER join tbl_emp_type on(tbl_employee.emp_type_id=tbl_emp_type.id) INNER JOIN tbl_agama on(tbl_employee.agama_id=tbl_agama.id)

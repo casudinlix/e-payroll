@@ -16,7 +16,8 @@ class Pilih extends MX_Controller{
 
   function index()
   {
-    $data['company']=$this->app->getcompany()->result();
+    $data['company']=$this->app->getcompany_id()->result();
+
     $this->load->view('pilih',$data);
     if (isset($_POST['pilih'])) {
       $array = array(

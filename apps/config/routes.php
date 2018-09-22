@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['404_override'] = 'myerror';
 $route['translate_uri_dashes'] = FALSE;
 $route['welcome/dude'] =  "welcome/pilih/index";
 $route['welcome/dude/change'] =  "welcome/pilih/change";
@@ -20,3 +20,10 @@ $route['settings/role-permission'] =  "home/acl/acl/role_permission";
 $route['settings/role/delete'] =  "home/acl/acl/role_delete";
 $route['settings/menu/delete'] =  "home/acl/acl/menu_delete";
 $route['settings/company/delete'] =  "home/acl/acl/company_delete";
+
+///data master
+$route['masters/company'] =  "home/master/master";
+$route['masters/company/edit/(:any)'] =  "home/master/master/companyedit/$1";
+$route['masters/employee'] =  "home/master/master/employee";
+$route['masters/employee/add'] =  "home/master/master/employeeadd";
+$route['masters/employee/simpan'] =  "home/master/master/simpanemploye";
