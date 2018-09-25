@@ -88,7 +88,7 @@
                           * </span>
                           </label>
                           <div class="col-md-4">
-                            <input type="number" class="form-control" name="fid" required=''/>
+                            <input type="text" onkeypress="return angka(event)" class="form-control" name="fid" required=''/>
 
                           </div>
                         </div>
@@ -163,7 +163,7 @@
       														<div class="form-group">
       															<label class="control-label col-md-3">Phone</label>
       															<div class="col-md-9">
-      																<input type="text" name="phone" class="form-control" placeholder="eg. 085xx">
+      																<input type="text" onkeypress="return angka(event)" name="phone" class="form-control" placeholder="eg. 085xx">
       															</div>
       														</div>
       													</div>
@@ -230,7 +230,7 @@
       														<div class="form-group">
       															<label class="control-label col-md-3">Address</label>
       															<div class="col-md-9">
-      																<textarea class="form-control" required='true' placeholder="Kampung RT/RW Kec , Kabupaten" name="address"></textarea>
+      																<textarea class="form-control" required='true' placeholder="Kampung RT/RW Kec , Kabupaten" name="address" autocomplete="off"></textarea>
       															</div>
       														</div>
       													</div>
@@ -324,7 +324,7 @@
                           * </span>
                           </label>
                           <div class="col-md-4">
-                            <input type="number" class="form-control" name="account" autocomplete="off" required=''/>
+                            <input type="text" onkeypress="return angka(event)" class="form-control" name="account" autocomplete="off" required=''/>
 
                           </div>
                         </div>
@@ -341,9 +341,18 @@
                               <?php endforeach; ?>
                             </select>
                           </div>
+
                         </div>
 
+                        <div class="form-group">
+                          <label class="control-label col-md-3">Net Salary <span class="required">
+                          * </span>
+                          </label>
+                          <div class="col-md-4">
+                            <input type="text" onkeypress="return angka(event)" class="form-control" name="salary" autocomplete="off" required=''/>
 
+                          </div>
+                        </div>
 
                       </div>
                       <div class="tab-pane" id="tab4">
@@ -352,26 +361,26 @@
                         <div class="form-group">
                           <label class="control-label col-md-3">NIK:</label>
                           <div class="col-md-4">
-                            <input type="number" maxlength="16" name="nik" class="form-control">
+                            <input type="text" onkeypress="return angka(event)" maxlength="16" name="nik" class="form-control">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3">NPWP:</label>
                           <div class="col-md-4">
-                            <input type="number" maxlength="16" name="npwp" class="form-control">
+                            <input type="text" onkeypress="return angka(event)" maxlength="16" name="npwp" class="form-control">
                           </div>
                         </div>
 
                         <div class="form-group">
                           <label class="control-label col-md-3">BPJS KES:</label>
                           <div class="col-md-4">
-                            <input type="number" maxlength="16" required='' name="bpjskes" class="form-control">
+                            <input type="text" onkeypress="return angka(event)" maxlength="16" required='' name="bpjskes" class="form-control">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3">BPJS TK:</label>
                           <div class="col-md-4">
-                            <input type="number" maxlength="16" required='' name="bpjstk" class="form-control">
+                            <input type="text" onkeypress="return angka(event)" maxlength="16" required='' name="bpjstk" class="form-control">
                           </div>
                         </div>
 

@@ -275,7 +275,7 @@ $id=$this->input->post('id');
   function role_permission(){
     $data['title']="| Assign Permission";
     $data['role']=$this->app->role()->result();
-    $data['menu']=$this->app->getmenu()->result();
+    $data['menu']=$this->app->menuactive()->result();
     $data['group']=$this->app->menuper()->result();
     $data['groupid']=$this->app->group()->result();
     $data['user']=$this->app->user()->result();

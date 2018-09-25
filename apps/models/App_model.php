@@ -78,16 +78,27 @@ function getidcompany($id){
   return $this->db->get_where('tbl_company',['id'=>base64_decode($id)]);
 }
 function getemployee($id){
+
+  $this->db->order_by('emp_name', 'asc');
   return $this->db->get_where('view_employee',['company_id'=>$id]);
 }
 function emptype(){
   return $this->db->get('tbl_emp_type');
 }
+function emptypeid($id){
+  return $this->db->get_where('tbl_emp_type',['id'=>base64_decode($id)])->row();
+}
 function dept(){
 return $this->db->get('tbl_dept');
 }
+function deptid($id){
+  return $this->db->get_where('tbl_dept',['id'=>$id])->row();
+}
 function position(){
 return $this->db->get('tbl_position');
+}
+function positionid($id){
+  return $this->db->get_where('tbl_position',['id'=>base64_decode($id)])->row();
 }
 function bank(){
   return $this->db->get('tbl_bank');
@@ -95,14 +106,34 @@ function bank(){
 function agama(){
   return $this->db->get('tbl_agama');
 }
+function agamaid($id){
+  return $this->db->get_where('tbl_agama',['id'=>$id])->row();
+}
 function edu(){
   return $this->db->get('tbl_edu');
+}
+function eduid($id){
+  return $this->db->get_where('tbl_edu',['id'=>base64_decode($id)])->row();
 }
 function maxid($id,$table){
   $this->db->select_max($id);
   $cek=$this->db->get($table)->row();
-
-
   return $cek;
 }
+function editemployee($id){
+return $this->db->get_where('view_employee',['emp_id'=>base64_decode($id)])->row();
+}
+function cekpass($id){
+  return $this->db->get_where('tbl_users',['id_emp'=>base64_decode($id)]);
+}
+function menuactive(){
+  return $this->db->get_where('tbl_menus',['is_published'=>1]);
+}
+function insentif(){
+  return $this->db->get('tbl_insentif');
+}
+function insentifid($id){
+  return $this->db->get_where('tbl_insentif',['id'=>base64_decode($id)])->row();
+}
+
 }

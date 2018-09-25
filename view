@@ -17,10 +17,26 @@ GROUP BY tbl_company.id, tbl_company.company_name
 
 view_employee
 SELECT tbl_employee.id as emp_id,
-tbl_employee.fid,tbl_employee.emp_nip,tbl_employee.new_nip,
-tbl_employee.emp_name,tbl_employee.sex,tbl_agama.nama_agama,tbl_employee.company_id,tbl_company.company_name,tbl_dept.dept_name,
-tbl_employee.join_date,tbl_position.position_name, tbl_emp_type.type_name
+tbl_employee.fid,tbl_employee.emp_nip,tbl_employee.new_nip,tbl_employee.nik,
+tbl_employee.emp_name,tbl_employee.birth_date,tbl_employee.sex,tbl_employee.agama_id,tbl_agama.nama_agama,tbl_employee.company_id,tbl_company.company_name,
+tbl_employee.dept_id,tbl_dept.dept_name,tbl_employee.merital_status,tbl_employee.phone,tbl_employee.email,tbl_employee.address,
+tbl_employee.join_date,tbl_employee.contract_end,tbl_employee.resign_date,tbl_employee.position_id,tbl_position.position_name, tbl_employee.emp_type_id,tbl_emp_type.type_name,tbl_employee.bank_account,tbl_employee.bank_type,tbl_bank.bank_name,tbl_employee.npwp,tbl_employee.bpjskes,
+tbl_employee.bpjstk,tbl_employee.edu_id,tbl_edu.edu_name,view_act_login.pass,view_act_login.group_id,tbl_group.nama_group,tbl_salary.salary
 FROM tbl_employee INNER JOIN tbl_company on(tbl_employee.company_id=tbl_company.id) inner JOIN tbl_dept
 ON(tbl_employee.dept_id=tbl_dept.id) INNER JOIN tbl_position
 on(tbl_employee.position_id=tbl_position.id)
-INNER join tbl_emp_type on(tbl_employee.emp_type_id=tbl_emp_type.id) INNER JOIN tbl_agama on(tbl_employee.agama_id=tbl_agama.id)
+INNER join tbl_emp_type on(tbl_employee.emp_type_id=tbl_emp_type.id) INNER JOIN tbl_agama on(tbl_employee.agama_id=tbl_agama.id) INNER JOIN
+tbl_bank on(tbl_employee.bank_type=tbl_bank.id) INNER join tbl_edu on(tbl_employee.edu_id=tbl_edu.id) INNER join view_act_login on(tbl_employee.id=view_act_login.emp_id)
+INNER JOIN tbl_group on(view_act_login.group_id=tbl_group.id) INNER join tbl_salary on(tbl_employee.id=tbl_salary.emp_id)
+
+
+view_salary
+SELECT tbl_salary.id,tbl_salary.emp_id,
+tbl_employee.new_nip,tbl_employee.emp_name,
+tbl_position.position_name,tbl_employee.join_date,tbl_company.company_name,
+tbl_salary.salary
+FROM tbl_salary INNER JOIN tbl_employee on(tbl_salary.emp_id=tbl_employee.id)
+INNER JOIN tbl_position ON(tbl_employee.position_id=tbl_position.id) INNER JOIN
+tbl_company ON(tbl_employee.company_id=tbl_company.id)
+ORDER BY tbl_employee.emp_name
+ASC

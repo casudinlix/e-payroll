@@ -660,14 +660,15 @@
   <i class="icon-arrow-up"></i>
 </div>
 </div>
-<!-- END FOOTER -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="../../assets/global/plugins/respond.min.js"></script>
-<script src="../../assets/global/plugins/excanvas.min.js"></script>
-<![endif]-->
+<script>
+  function angka(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+     if (charCode > 31 && (charCode < 48 || charCode > 57))
 
+      return false;
+    return true;
+  }
+</script>
 <script src="<?php echo tema()?>sweat/sweetalert2.all.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
@@ -716,6 +717,12 @@ Demo.init(); // init demo features
 ComponentsPickers.init();
 });
 </script>
+<script>
+$(document).ready(function() {
+
+});
+  </script>
+
 <script type="text/javascript">
 jQuery(document).ready(function() {
       //Hide the overview when click

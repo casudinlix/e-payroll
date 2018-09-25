@@ -29,7 +29,7 @@
                     <a href="<?php echo site_url('report/employee') ?>"><button  class="btn yellow">
                     Export Excel<i class="fa fa-file-excel-o"></i>
                   </button></a>
-                  
+
                   </div>
                 </div>
 
@@ -82,7 +82,7 @@
                  <?php echo $no++; ?>
               </td>
               <td>
-                <?php echo $key->emp_name ?>
+                <a href="<?php echo site_url('masters/employee/detil/'.clean($key->emp_id)) ?>" title="Ditel"><?php echo $key->emp_name ?></a>
               </td>
               <td>
                  <?php echo $key->emp_nip ?>
