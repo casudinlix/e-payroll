@@ -25,6 +25,18 @@ if ( ! function_exists('tema')){
 
 
 	}
+	function employee($uri = '',$protocol = NULL){
+		$CI =& get_instance();
+		$icon="xupload/employee";
+
+
+		$icon.="/";
+		$icon.=$uri;
+
+	return $CI->config->base_url($icon, $protocol);
+
+
+	}
 	function logo($uri = '',$protocol = NULL){
 		$CI =& get_instance();
 		$logo="surat/logo";

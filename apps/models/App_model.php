@@ -136,4 +136,5 @@ function insentifid($id){
   return $this->db->get_where('tbl_insentif',['id'=>base64_decode($id)])->row();
 }
 
+
 }

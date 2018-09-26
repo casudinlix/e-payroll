@@ -136,7 +136,7 @@
                    <?php echo $key->company_name ?>
                 </td>
                 <td>
-                   <?php echo $key->total_employe ?>
+                   <?php echo $key->total ?>
                 </td>
 
 

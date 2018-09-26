@@ -99,6 +99,7 @@ class Master extends MX_Controller{
     $this->load->view('layout/head', $data);
     $this->load->view('master/employee/index', $data);
     $this->load->view('layout/foot', $data);
+
   }
   function employeeadd(){
     $data['title']="| Add New Employee";
@@ -240,7 +241,6 @@ function editemp(){
 
       $value = [
         'fid'			=> $this->input->post('fid',TRUE),
-
         'new_nip'			=> $this->input->post('nip'),
         'nik'			=>  $this->input->post('nik',TRUE),
         'emp_name'			=> $this->input->post('nama',TRUE),
@@ -268,6 +268,7 @@ function editemp(){
       ];
 
   $employee = $value;
+  $id=$this->input->post('id');
     $this->global->update('tbl_employee', $employee, ['id' => $id]);
 
 
@@ -280,18 +281,13 @@ function editemp(){
   $this->db->trans_commit();
 
     }
-
-    $login=['id_emp'=>$id,
-            'username'=>$this->input->post('nama',TRUE),
+$id=$this->input->post('id');
+    $login=['username'=>$this->input->post('nama',TRUE),
             'pass'=>base64_encode($this->input->post('pass')),
             'group_id'=>$this->input->post('group',TRUE),
             'status'=>1,
-            'add_by'=>$this->session->userdata('username')
-  ];
-  $salary=['emp_id'=>$this->app->maxid('id','tbl_employee')->id,
-            'salary'=>$this->input->post('salary'),
-          'add_by'=>$this->session->userdata('username')
-          ];
+            'add_by'=>$this->session->userdata('username')];
+  $salary=['salary'=>$this->input->post('salary'),          'add_by'=>$this->session->userdata('username')];
 
   $this->global->update('tbl_salary', $salary, ['emp_id' => $id]);
 
@@ -308,7 +304,7 @@ $this->global->update('tbl_users', $login, ['id_emp' => $id]);
   }
 
 
-  $company=['user_id'=>$id,
+  $company=[
           'company_id'=>$this->input->post('company',TRUE),
           'add_by'=>$this->session->userdata('username')
   ];

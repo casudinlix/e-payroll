@@ -21,7 +21,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'email', 'session','multi_menu','pdf');
+$autoload['libraries'] = array('database', 'email', 'session','multi_menu','pdf','datatables');
 //$autoload['libraries'] = array('bcrypt','functions','database','session','pagination','upload','email','table','multi_menu');
 
 /*
@@ -83,4 +83,4 @@ $autoload['config'] = array();
 */
 $autoload['language'] = array();
 
-$autoload['model'] = array('App_model'=>'app','Funstion_m'=>'fungsi','Home_model'=>'home','m_global'=>'global','M_acl'=>'acl');
+$autoload['model'] = array('App_model'=>'app','Funstion_m'=>'fungsi','Home_model'=>'home','m_global'=>'global','M_acl'=>'acl','master/M_employee'=>'employee');

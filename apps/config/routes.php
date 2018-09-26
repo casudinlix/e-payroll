@@ -36,3 +36,4 @@ $route['masters/management/position/(:any)'] =  "home/master/master/editposition
 $route['masters/management/type/(:any)'] =  "home/master/master/edittype/$1";
  $route['masters/management/edu/(:any)'] =  "home/master/master/editedu/$1";
 $route['masters/management/insentif/(:any)'] =  "home/master/master/editinsentif/$1";
+$route['masters/employee/detil/(:any)'] =  "home/employee/employee/detail/$1";

@@ -1,54 +1,58 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require('vendor/autoload.php');
+use PhpOffice\PhpSpreadsheet\Helper\Sample;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+// End load library phpspreadsheet
 class Report extends MX_Controller{
 
   public function __construct()
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
-  }
-  function index(){
-    echo "hai";
+
   }
 
-  function employee()
+  function index()
   {
-    $namaFile = "view_employee.xls";
-    $judul = "view_employee";
-    $tablehead = 0;
-    $tablebody = 1;
-    $nourut = 1;
-    //penulisan header
-    header("Pragma: public");
-    header("Expires: 0");
-    header("Cache-Control: must-revalidate, post-check=0,pre-check=0");
-    header("Content-Type: application/force-download");
-    header("Content-Type: application/octet-stream");
-    header("Content-Type: application/download");
-    header("Content-Disposition: attachment;filename=" . $namaFile . "");
-    header("Content-Transfer-Encoding: binary ");
 
-    xlsBOF();
+  }
+  function tes(){
+$excel = new Spreadsheet();
+    //Set document properties
+$excel->getProperties()->setCreator('Casudin - Rajin Ngoding');
 
-    $kolomhead = 1;
-    xlsWriteLabel($tablehead, $kolomhead++, "No");
-    xlsWriteLabel($tablehead, $kolomhead++, "Emp Id");
-    xlsWriteLabel($tablehead, $kolomhead++, "Fid");
-    xlsWriteLabel($tablehead, $kolomhead++, "Emp Nip");
-    xlsWriteLabel($tablehead, $kolomhead++, "New Nip");
-    xlsWriteLabel($tablehead, $kolomhead++, "Emp Name");
-    xlsWriteLabel($tablehead, $kolomhead++, "Company Id");
-    xlsWriteLabel($tablehead, $kolomhead++, "Company Name");
-    xlsWriteLabel($tablehead, $kolomhead++, "Dept Name");
-    xlsWriteLabel($tablehead, $kolomhead++, "Join Date");
-    xlsWriteLabel($tablehead, $kolomhead++, "Position Name");
-    xlsWriteLabel($tablehead, $kolomhead++, "Type Name");
+$excel->setActiveSheetIndex(0);
+$excel->setCellValue('A1', 'Nomor');
+$excel->setCellValue('B1', 'NAMA Posisi');
+
+$cek=$this->db->get('tbl_position')->result();
+
+// Miscellaneous glyphs, UTF-8
+$i=2; foreach($cek as $key) {
+
+$excel->setActiveSheetIndex(0);
+$excel->setCellValue('A'.$i, $key->id);
+$excel->setCellValue('B'.$i, $key->position_name);
+$i++;
+}
+// Rename worksheet
+$excel->getActiveSheet()->setTitle('Report Excel '.date('d-m-Y H'));
+
+// Set active sheet index to the first sheet, so Excel opens this as the first sheet
+$excel->setActiveSheetIndex(0);
+$filename = 'name-of-the-generated-file';
+header('Content-Type: application/vnd.ms-excel');
+header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"');
+header('Cache-Control: max-age=0');
 
 
-    xlsEOF();
-    exit();
+$writer = IOFactory::createWriter($excel, 'Xlsx');
+$writer->save('php://output');
+exit;
+
   }
 
 }

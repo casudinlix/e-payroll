@@ -35,7 +35,7 @@
 
               </div>
             </div>
-            <table class="table table-striped table-bordered table-hover data-table" id="sample_1">
+            <table class="table table-striped table-bordered table-hover" id="employee">
             <thead>
             <tr>
 
@@ -48,9 +48,7 @@
               <th>
                  NIP
               </th>
-              <th>
-                 New NIP
-              </th>
+
               <th>
                  Company
               </th>
@@ -72,45 +70,7 @@
             </tr>
             </thead>
             <tbody>
-              <?php $no=1;
-              foreach ($employee as $key): ?>
 
-
-            <tr class="odd gradeX">
-
-              <td>
-                 <?php echo $no++; ?>
-              </td>
-              <td>
-                <a href="<?php echo site_url('masters/employee/detil/'.clean($key->emp_id)) ?>" title="Ditel"><?php echo $key->emp_name ?></a>
-              </td>
-              <td>
-                 <?php echo $key->emp_nip ?>
-              </td>
-              <td>
-                 <?php echo $key->new_nip ?>
-              </td>
-              <td class="center">
-                <?php echo $key->company_name ?>
-              </td>
-              <td>
-                 <?php echo $key->dept_name ?>
-              </td>
-              <td>
-                 <?php echo $key->join_date ?>
-              </td>
-              <td>
-                 <?php echo $key->position_name ?>
-              </td>
-              <td>
-                 <?php echo $key->type_name ?>
-              </td>
-              <td><a href="<?php echo site_url("masters/employee/edit/".clean($key->emp_id) )?>" class="btn btn-warning" title="Edit"><i class="icon icon-note"></i></a>
-              </td>
-                <?php endforeach; ?>
-            </tr>
-
-            </tbody>
             </table>
           </div>
         </div>

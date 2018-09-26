@@ -383,7 +383,7 @@
                             <input type="text" onkeypress="return angka(event)" maxlength="16" required='' name="bpjstk" class="form-control" <?php echo $employee->bpjstk?>>
                           </div>
                         </div>
-<input type="hidden" name="id" value="<?php echo $employee->emp_id ?>"
+<input type="hidden" name="id" value="<?php echo $employee->emp_id ?>">
 
 
 

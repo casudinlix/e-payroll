@@ -33,31 +33,36 @@ class Api extends MX_Controller{
 
   }
   function cekpass(){
-    $cek=$this->db->get('tbl_users')->result();
-    foreach ($cek as $key => $value) {
-       echo base64_encode($value->pass)."<br/>";
-
-       }
-
-
-
-
-
-    // for ($i=0; $i <count($cek->id); $i++) {
-    //   $pas=$this->db->get_where('tbl_users',['id'=>$id[$i]])->row();
-    //
-    //   // $this->db->where('id',$pass->id[$i]);
-    //   // $this->db->update('tbl_users',['pass'=>base64_encode($pass->pass[$i])]);
-    //
-    // }
-
-
-    // $data=['pass'=>$pass];
-    // $this->db->update('tbl_users',$data);
-    // for ($i=0; $i < $id; $i++) {
-    //   echo $id[$i];
-    // }
 
   }
+function api_employee(){
+  $list = $this->employee->get_datatables();
+       $data = array();
+       $no = $_POST['start'];
+       foreach ($list as $key) {
+           $no++;
+           $row = array();
+           $row[] = $no;
+           $row[] = "<a title='Detail' href='".site_url('masters/employee/detil/'.clean($key->emp_id))."'>".$key->emp_name."</a>";
 
+           $row[] = $key->new_nip;
+           $row[] = $key->company_name;
+           $row[] = $key->dept_name;
+           $row[] = $key->join_date;
+           $row[] = $key->position_name;
+           $row[] = $key->type_name;
+           $row[] = "<a href='".site_url('masters/employee/edit/'.clean($key->emp_id))."' class='btn btn-warning' title='Edit'><i class='icon icon-note'></i></a>";
+
+           $data[] = $row;
+       }
+
+       $output = array(
+                       "draw" => $_POST['draw'],
+                       "recordsTotal" => $this->employee->count_all(),
+                       "recordsFiltered" => $this->employee->count_filtered(),
+                       "data" => $data,
+               );
+       //output to json format
+       echo json_encode($output);
+}
 }

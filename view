@@ -1,20 +1,16 @@
 select `db_hr_dev`.`tbl_users`.`id` AS `user_id`,`db_hr_dev`.`tbl_employee`.`id` AS `emp_id`,`db_hr_dev`.`tbl_employee`.`fid` AS `fid`,`db_hr_dev`.`tbl_users`.`username` AS `username`,`db_hr_dev`.`tbl_users`.`pass` AS `pass`,`db_hr_dev`.`tbl_users`.`group_id` AS `group_id`,tbl_employee.emp_nip,tbl_employee.new_nip,`db_hr_dev`.`tbl_users`.`status` AS `status`,`db_hr_dev`.`tbl_employee`.`email` AS `email` from (`db_hr_dev`.`tbl_employee` join `db_hr_dev`.`tbl_users` on((`db_hr_dev`.`tbl_employee`.`id` = `db_hr_dev`.`tbl_users`.`id_emp`)))
-
+-------------------------------
 company view
 SELECT tbl_company_permission.id,tbl_company.id company_id,tbl_company.company_name,tbl_users.id as user_id,
 tbl_users.username
 FROM tbl_company_permission INNER JOIN tbl_users on(tbl_company_permission.user_id=tbl_users.id)
 INNER JOIN tbl_company ON(tbl_company.id=tbl_company_permission.company_id)
-
+----------------------------
 report company
-SELECT tbl_company.id,
-tbl_company.company_name,tbl_company.phone,
-tbl_company.fax,tbl_company.email,
-COUNT(tbl_employee.company_id) as total_employe
-FROM tbl_company INNER JOIN tbl_employee
-on(tbl_company.id=tbl_employee.company_id)
-GROUP BY tbl_company.id, tbl_company.company_name
-
+SELECT tbl_company.id,tbl_company.company_name, COUNT(tbl_employee.company_id) as total
+FROM tbl_company LEFT OUTER JOIN tbl_employee ON(tbl_company.id=tbl_employee.company_id)
+GROUP BY tbl_company.id
+----------------------------
 view_employee
 SELECT tbl_employee.id as emp_id,
 tbl_employee.fid,tbl_employee.emp_nip,tbl_employee.new_nip,tbl_employee.nik,
@@ -29,7 +25,7 @@ INNER join tbl_emp_type on(tbl_employee.emp_type_id=tbl_emp_type.id) INNER JOIN 
 tbl_bank on(tbl_employee.bank_type=tbl_bank.id) INNER join tbl_edu on(tbl_employee.edu_id=tbl_edu.id) INNER join view_act_login on(tbl_employee.id=view_act_login.emp_id)
 INNER JOIN tbl_group on(view_act_login.group_id=tbl_group.id) INNER join tbl_salary on(tbl_employee.id=tbl_salary.emp_id)
 
-
+------------------------------------
 view_salary
 SELECT tbl_salary.id,tbl_salary.emp_id,
 tbl_employee.new_nip,tbl_employee.emp_name,
@@ -40,3 +36,27 @@ INNER JOIN tbl_position ON(tbl_employee.position_id=tbl_position.id) INNER JOIN
 tbl_company ON(tbl_employee.company_id=tbl_company.id)
 ORDER BY tbl_employee.emp_name
 ASC
+-----------------------------
+view_report_position
+SELECT tbl_position.id,tbl_position.position_name, COUNT(tbl_employee.position_id) as total
+FROM tbl_position LEFT OUTER JOIN tbl_employee ON(tbl_position.id=tbl_employee.position_id)
+GROUP BY tbl_position.id
+------------------------
+report_sex
+select tbl_company.company_name,
+ sum(CASE WHEN sex = 'MALE' then 1 else 0 end )as total_male,
+ sum(CASE WHEN sex = 'FEMALE' then 1 else 0 end) as total_female
+
+ from tbl_employee INNER join tbl_company on(tbl_company.id=tbl_employee.company_id)
+ group by tbl_company.company_name
+----------------
+view_report_employe_type
+SELECT tbl_emp_type.id,tbl_emp_type.type_name, COUNT(tbl_employee.emp_type_id) as total
+FROM tbl_emp_type LEFT OUTER JOIN tbl_employee ON(tbl_emp_type.id=tbl_employee.emp_type_id)
+GROUP BY tbl_emp_type.id
+----------
+view_report_dept
+SELECT tbl_dept.id,tbl_dept.dept_name, COUNT(tbl_employee.dept_id) as total
+FROM tbl_dept LEFT OUTER JOIN tbl_employee ON(tbl_dept.id=tbl_employee.dept_id)
+GROUP BY tbl_dept.id
+---------------
