@@ -660,6 +660,7 @@
   <i class="icon-arrow-up"></i>
 </div>
 </div>
+
 <script>
   function angka(evt) {
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -669,6 +670,7 @@
     return true;
   }
 </script>
+
 <script src="<?php echo tema()?>sweat/sweetalert2.all.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
@@ -676,11 +678,9 @@
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/jquery-validation/js/additional-methods.min.js"></script>
 
-
-
 <script src="<?php echo tema()?>global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo tema()?>global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+
 <script src="<?php echo tema()?>global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
@@ -708,13 +708,117 @@
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 <script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <script src="<?php echo tema()?>admin/pages/scripts/components-pickers.js"></script>
+<script src="<?php echo tema()?>global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>chart/amcharts/amcharts.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>chart/amcharts/serial.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>chart/amcharts/pie.js" type="text/javascript"></script>
+<script src="<?php echo tema()?>admin/pages/scripts/charts-flotcharts.js"></script>
+<script src="<?php echo tema()?>admin/pages/scripts/charts-amcharts.js"></script>
+<script src="<?php echo tema()?>chart/amcharts/plugins/dataloader/dataloader.js"></script>
+<script type="text/javascript" src="<?php echo tema()?>global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+<script>
+var site="<?php echo site_url('tes') ?>";
+var chart = AmCharts.makeChart("companyx", {
+
+    "type": "pie",
+    "theme": "none",
+
+
+    "fontFamily": 'Open Sans',
+
+    "color":    '#888',
+    "dataLoader": {
+        "url": site,
+        "format": "json"
+      },
+
+    "valueField": "total",
+    "titleField": "company_name",
+
+    "balloon": {
+        "fixedPosition": true
+      },
+    "balloonText": "[[title]]<br><span style='font-size:20px'><b>[[value]]</b> ([[percents]]%)</span>",
+
+    "exportConfig": {
+        menuItems: [{
+            icon: '/lib/3/images/export.png',
+            format: 'png'
+        }]
+    }
+
+});
+</script>
+<script>
+var site="<?php echo site_url('api/reportcompany') ?>";
+var chart = AmCharts.makeChart("chart_4", {
+            "type": "serial",
+            "theme": "light",
+
+
+            "handDrawn": true,
+            "handDrawScatter": 3,
+            "legend": {
+                "useGraphSettings": true,
+                "markerSize": 12,
+                "valueWidth": 0,
+                "verticalGap": 0
+            },
+            "dataLoader": {
+                "url": site,
+                "format": "json"
+              },
+            "valueAxes": [{
+                "minorGridAlpha": 0.08,
+                "minorGridEnabled": true,
+                "position": "top",
+                "axisAlpha": 0
+            }],
+            "startDuration": 1,
+            "graphs": [{
+                "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                "title": "total",
+                "type": "column",
+                "fillAlphas": 0.8,
+
+                "valueField": "total"
+            }, {
+                "balloonText": "<span style='font-size:13px;'>[[title]] in [[category]]:<b>[[value]]</b></span>",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletColor": "#FFFFFF",
+                "useLineColorForBulletBorder": true,
+                "fillAlphas": 0,
+                "lineThickness": 2,
+                "lineAlpha": 1,
+                "bulletSize": 7,
+                "title": "total",
+                "valueField": "total"
+            }],
+            "rotate": true,
+            "categoryField": "company_name",
+            "categoryAxis": {
+                "gridPosition": "start"
+            }
+        });
+
+        $('#chart_4').closest('.portlet').find('.fullscreen').click(function() {
+            chart.invalidateSize();
+        });
+</script>
 <script>
 jQuery(document).ready(function() {
- Metronic.init(); // init metronic core components
+Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
+
 ComponentsPickers.init();
+ChartsFlotcharts.init();
+ChartsFlotcharts.initCharts();
+ChartsFlotcharts.initPieCharts();
+ChartsFlotcharts.initBarCharts();
+
 });
 </script>
 <script>

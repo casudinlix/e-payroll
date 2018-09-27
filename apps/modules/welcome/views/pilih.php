@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="<?php echo tema()?>sweat/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -93,6 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo tema()?>admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="<?php echo tema()?>admin/pages/scripts/lock.js"></script>
+<script src="<?php echo tema()?>sweat/sweetalert2.all.min.js" type="text/javascript"></script>
 <script>
 jQuery(document).ready(function() {
     Metronic.init(); // init metronic core components
@@ -106,6 +108,15 @@ $('.select2').select2({
 });
 </script>
 <!-- END JAVASCRIPTS -->
+<?php if ($this->session->flashdata('denied')): ?>
+<script type="text/javascript">
+swal(
+'You Not Allowed Access!',
+'Please Contact Andministrator',
+'error'
+)
+</script>
+<?php endif; ?>
 </body>
 <!-- END BODY -->
 </html>

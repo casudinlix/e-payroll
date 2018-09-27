@@ -10,12 +10,18 @@
 <meta content="" name="description"/>
 <meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
+<script>
+var base_url = window.location.origin;
+var host = window.location.host;
+var pathArray = window.location.pathname.split( '/' );
+</script>
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>sweat/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo tema()?>global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
 <link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/clockface/css/clockface.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-datepicker/css/datepicker3.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo tema()?>global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css"/>
@@ -372,7 +378,7 @@
         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-          <img alt="" class="img-circle" src="<?php echo tema()?>avatar.png"/>
+          <img alt="" class="img-circle" src="<?php echo employee().$this->app->getPhoto()->photo?>"/>
           <span class="username username-hide-on-mobile">
           <?php echo $this->session->userdata('username'); ?> </span>
           <i class="fa fa-angle-down"></i>

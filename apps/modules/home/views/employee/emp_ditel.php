@@ -37,7 +37,7 @@
   									<div class="col-md-3">
   										<ul class="list-unstyled profile-nav">
   											<li>
-  												<img src="<?php echo employee() ?>avatar.png" class="img-responsive" alt="" height="100px" width="200px"/>
+  												<img src="<?php echo employee().$emp->photo ?>" class="img-responsive" alt="" height="100px" width="200px"/>
 
   											</li>
 
@@ -59,6 +59,21 @@
   													<li>
   														<i class="fa fa-briefcase"></i> <?php echo $emp->position_name ?>
   													</li>
+                            <li>
+  														<i class="fa fa-bank"></i> <?php echo $emp->company_name ?>
+  													</li>
+                            <li>
+                              <i class="fa fa-users"></i> <?php echo $manager->manager_name ?>
+                            </li>
+                            <li>
+                              <i class="fa fa-child"></i> <?php echo $umur ?>
+                            </li>
+                            <li>
+                              <i class="fa fa-clock-o"></i> <?php echo $kerja ?>
+                            </li>
+                            <li>
+                              <i class="fa fa-sliders"></i> <?php echo $emp->type_name ?>
+                            </li>
 
 
   												</ul>
@@ -80,144 +95,43 @@
   												</li>
   											</ul>
   											<div class="tab-content">
+
   												<div class="tab-pane active" id="tab_1_11">
+                            <a href="#tab_1_4" data-toggle="tab" class="btn btn-success">Add Family</a>
   													<div class="portlet-body">
   														<table class="table table-striped table-bordered table-advance table-hover data-table">
   														<thead>
   														<tr>
+                                <th>
+  																<i class="fa fa-sort-numeric-asc"></i> No
+  															</th>
   															<th>
-  																<i class="fa fa-briefcase"></i> Company
+  																<i class="fa fa-briefcase"></i> Name
   															</th>
   															<th class="hidden-xs">
-  																<i class="fa fa-question"></i> Descrition
+  																<i class="fa fa-question"></i> Status
   															</th>
   															<th>
-  																<i class="fa fa-bookmark"></i> Amount
+  																<i class="fa fa-road"></i> Address
   															</th>
   															<th>
   															</th>
   														</tr>
   														</thead>
   														<tbody>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																Pixel Ltd </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Server hardware purchase
-  															</td>
-  															<td>
-  																 52560.10$ <span class="label label-success label-sm">
-  																Paid </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs green-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																Smart House </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Office furniture purchase
-  															</td>
-  															<td>
-  																 5760.00$ <span class="label label-warning label-sm">
-  																Pending </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs blue-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																FoodMaster Ltd </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Company Anual Dinner Catering
-  															</td>
-  															<td>
-  																 12400.00$ <span class="label label-success label-sm">
-  																Paid </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs blue-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																WaterPure Ltd </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Payment for Jan 2013
-  															</td>
-  															<td>
-  																 610.50$ <span class="label label-danger label-sm">
-  																Overdue </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs red-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																Pixel Ltd </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Server hardware purchase
-  															</td>
-  															<td>
-  																 52560.10$ <span class="label label-success label-sm">
-  																Paid </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs green-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																Smart House </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Office furniture purchase
-  															</td>
-  															<td>
-  																 5760.00$ <span class="label label-warning label-sm">
-  																Pending </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs blue-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
-  														<tr>
-  															<td>
-  																<a href="javascript:;">
-  																FoodMaster Ltd </a>
-  															</td>
-  															<td class="hidden-xs">
-  																 Company Anual Dinner Catering
-  															</td>
-  															<td>
-  																 12400.00$ <span class="label label-success label-sm">
-  																Paid </span>
-  															</td>
-  															<td>
-  																<a class="btn default btn-xs blue-stripe" href="javascript:;">
-  																View </a>
-  															</td>
-  														</tr>
+
+                                <?php $no=1;
+                                foreach ($family as $key): ?>
+                                  <tr>
+                                  <td><?php echo $no++ ?></td>
+                                    <td><?php echo $key->family_name ?></td>
+                                      <td><?php echo $key->family_status ?></td>
+                                        <td><?php echo $key->address ?></td>
+                                        <td><i class="fa fa-edit btn btn-warning" ></i></td>
+
+
+                                <?php endforeach; ?>
+</tr>
   														</tbody>
   														</table>
   													</div>
@@ -271,10 +185,7 @@
   												<a data-toggle="tab" href="#tab_3-3">
   												<i class="fa fa-lock"></i> Change Password </a>
   											</li>
-  											<li>
-  												<a data-toggle="tab" href="#tab_4-4">
-  												<i class="fa fa-eye"></i> Privacity Settings </a>
-  											</li>
+
   										</ul>
   									</div>
   									<div class="col-md-9">
@@ -284,24 +195,27 @@
   												<p>
   													 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
   												</p>
-  												<form action="#" role="form">
+<form action="<?php echo site_url('api/uploadpict') ?>" method="post" enctype="multipart/form-data">
+
   													<div class="form-group">
   														<div class="fileinput fileinput-new" data-provides="fileinput">
   															<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-  																<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+<img src="<?php echo employee().$emp->photo ?>" alt=""/>
   															</div>
   															<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                                  <img>
   															</div>
   															<div>
+                                  <input type="hidden" name="id" value="<?php echo $emp->emp_id ?>">
   																<span class="btn default btn-file">
   																<span class="fileinput-new">
   																Select image </span>
   																<span class="fileinput-exists">
   																Change </span>
-  																<input type="file" name="...">
+  																<input type="file" name="file">
   																</span>
-  																<a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput">
-  																Remove </a>
+  																<button type="reset" class="btn default fileinput-exists" data-dismiss="fileinput">
+  																Remove </button>
   															</div>
   														</div>
   														<div class="clearfix margin-top-10">
@@ -312,26 +226,26 @@
   														</div>
   													</div>
   													<div class="margin-top-10">
-  														<a href="javascript:;" class="btn green">
-  														Submit </a>
+  														<button type="submit" class="btn green">
+  														Submit </button>
   														<a href="javascript:;" class="btn default">
   														Cancel </a>
   													</div>
   												</form>
   											</div>
   											<div id="tab_3-3" class="tab-pane">
-  												<form action="#">
+  												<form action="<?php echo site_url('mode/gantipass') ?>" method="POST">
   													<div class="form-group">
   														<label class="control-label">Current Password</label>
-  														<input type="password" class="form-control"/>
+  														<input type="password" class="form-control" name="pass1"/>
   													</div>
   													<div class="form-group">
   														<label class="control-label">New Password</label>
-  														<input type="password" class="form-control"/>
+  														<input type="password" class="form-control" name="pass2"/>
   													</div>
   													<div class="form-group">
   														<label class="control-label">Re-type New Password</label>
-  														<input type="password" class="form-control"/>
+  														<input type="password" class="form-control" name="pass3"/>
   													</div>
   													<div class="margin-top-10">
   														<a href="javascript:;" class="btn green">
@@ -341,59 +255,7 @@
   													</div>
   												</form>
   											</div>
-  											<div id="tab_4-4" class="tab-pane">
-  												<form action="#">
-  													<table class="table table-bordered table-striped">
-  													<tr>
-  														<td>
-  															 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus..
-  														</td>
-  														<td>
-  															<label class="uniform-inline">
-  															<input type="radio" name="optionsRadios1" value="option1"/>
-  															Yes </label>
-  															<label class="uniform-inline">
-  															<input type="radio" name="optionsRadios1" value="option2" checked/>
-  															No </label>
-  														</td>
-  													</tr>
-  													<tr>
-  														<td>
-  															 Enim eiusmod high life accusamus terry richardson ad squid wolf moon
-  														</td>
-  														<td>
-  															<label class="uniform-inline">
-  															<input type="checkbox" value=""/> Yes </label>
-  														</td>
-  													</tr>
-  													<tr>
-  														<td>
-  															 Enim eiusmod high life accusamus terry richardson ad squid wolf moon
-  														</td>
-  														<td>
-  															<label class="uniform-inline">
-  															<input type="checkbox" value=""/> Yes </label>
-  														</td>
-  													</tr>
-  													<tr>
-  														<td>
-  															 Enim eiusmod high life accusamus terry richardson ad squid wolf moon
-  														</td>
-  														<td>
-  															<label class="uniform-inline">
-  															<input type="checkbox" value=""/> Yes </label>
-  														</td>
-  													</tr>
-  													</table>
-  													<!--end profile-settings-->
-  													<div class="margin-top-10">
-  														<a href="javascript:;" class="btn green">
-  														Save Changes </a>
-  														<a href="javascript:;" class="btn default">
-  														Cancel </a>
-  													</div>
-  												</form>
-  											</div>
+
   										</div>
   									</div>
   									<!--end col-md-9-->
@@ -402,94 +264,11 @@
   							<!--end tab-pane-->
   							<div class="tab-pane" id="tab_1_4">
   								<div class="row">
-  									<div class="col-md-12">
-  										<div class="add-portfolio">
-  											<span>
-  											502 Items sold this week </span>
-  											<a href="javascript:;" class="btn icn-only green">
-  											Add a new Project <i class="m-icon-swapright m-icon-white"></i>
-  											</a>
-  										</div>
-  									</div>
+
   								</div>
-  								<!--end add-portfolio-->
+
   								<div class="row portfolio-block">
-  									<div class="col-md-5">
-  										<div class="portfolio-text">
-  											<img src="../../assets/admin/pages/media/profile/logo_metronic.jpg" alt=""/>
-  											<div class="portfolio-text-info">
-  												<h4>Metronic - Responsive Template</h4>
-  												<p>
-  													 Lorem ipsum dolor sit consectetuer adipiscing elit.
-  												</p>
-  											</div>
-  										</div>
-  									</div>
-  									<div class="col-md-5 portfolio-stat">
-  										<div class="portfolio-info">
-  											 Today Sold <span>
-  											187 </span>
-  										</div>
-  										<div class="portfolio-info">
-  											 Total Sold <span>
-  											1789 </span>
-  										</div>
-  										<div class="portfolio-info">
-  											 Earns <span>
-  											$37.240 </span>
-  										</div>
-  									</div>
-  									<div class="col-md-2">
-  										<div class="portfolio-btn">
-  											<a href="javascript:;" class="btn bigicn-only">
-  											<span>
-  											Manage </span>
-  											</a>
-  										</div>
-  									</div>
-  								</div>
-  								<!--end row-->
-  								<div class="row portfolio-block">
-  									<div class="col-md-5 col-sm-12 portfolio-text">
-  										<img src="../../assets/admin/pages/media/profile/logo_azteca.jpg" alt=""/>
-  										<div class="portfolio-text-info">
-  											<h4>Metronic - Responsive Template</h4>
-  											<p>
-  												 Lorem ipsum dolor sit consectetuer adipiscing elit.
-  											</p>
-  										</div>
-  									</div>
-  									<div class="col-md-5 portfolio-stat">
-  										<div class="portfolio-info">
-  											 Today Sold <span>
-  											24 </span>
-  										</div>
-  										<div class="portfolio-info">
-  											 Total Sold <span>
-  											660 </span>
-  										</div>
-  										<div class="portfolio-info">
-  											 Earns <span>
-  											$7.060 </span>
-  										</div>
-  									</div>
-  									<div class="col-md-2 col-sm-12 portfolio-btn">
-  										<a href="javascript:;" class="btn bigicn-only">
-  										<span>
-  										Manage </span>
-  										</a>
-  									</div>
-  								</div>
-  								<!--end row-->
-  								<div class="row portfolio-block">
-  									<div class="col-md-5 portfolio-text">
-  										<img src="../../assets/admin/pages/media/profile/logo_conquer.jpg" alt=""/>
-  										<div class="portfolio-text-info">
-  											<h4>Metronic - Responsive Template</h4>
-  											<p>
-  												 Lorem ipsum dolor sit consectetuer adipiscing elit.
-  											</p>
-  										</div>
+
   									</div>
   									<div class="col-md-5 portfolio-stat">
   										<div class="portfolio-info">

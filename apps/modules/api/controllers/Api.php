@@ -6,7 +6,9 @@ class Api extends MX_Controller{
   public function __construct()
   {
     parent::__construct();
-    //Codeigniter : Write Less Do More
+
+
+
 
 
 
@@ -32,7 +34,12 @@ class Api extends MX_Controller{
      $this->db->delete('tbl_role_permission');
 
   }
-  function cekpass(){
+  function reportcompany(){
+    $this->db->select('company_name, total');
+    $cek=$this->db->get('view_report_company')->result();
+
+      echo json_encode($cek);
+
 
   }
 function api_employee(){
@@ -51,7 +58,7 @@ function api_employee(){
            $row[] = $key->join_date;
            $row[] = $key->position_name;
            $row[] = $key->type_name;
-           $row[] = "<a href='".site_url('masters/employee/edit/'.clean($key->emp_id))."' class='btn btn-warning' title='Edit'><i class='icon icon-note'></i></a>";
+           $row[] = "<a href='".site_url('masters/employee/edit/'.clean($key->emp_id))."' class='btn btn-warning' title='Edit'><i class='icon icon-note'></i></a>"."<a href='".site_url('masters/employee/detil/'.clean($key->emp_id))."' class='btn btn-info' title='Detail'><i class='icon icon-eyeglasses'></i></a>";
 
            $data[] = $row;
        }
@@ -64,5 +71,62 @@ function api_employee(){
                );
        //output to json format
        echo json_encode($output);
+}
+function uploadpict(){
+  $config['upload_path'] = 'xupload/employee';
+  $config['allowed_types'] = 'gif|jpg|png|jpeg';
+  $config['max_size']  = '200';
+  $config['encrypt_name'] = TRUE;
+  $config['overwrite']     = TRUE;
+  $this->load->library('upload', $config);
+
+$this->upload->initialize($config);
+$id=$this->input->post('id');
+$cek=$this->db->get_where('tbl_employee',['id'=>$id])->row();
+
+if (!empty($_FILES['file']['name'])) {
+
+  if ($this->upload->do_upload('file'))
+         {
+             $gbr = $this->upload->data();
+             $gambar=$gbr['file_name']; //Mengambil file name dari gambar yang diupload
+
+             $this->db->trans_begin();
+                $value = ['photo'=>$gambar];
+
+
+           $book = $value;
+           if ($cek->images !='null') {
+             Unlink("xupload/employee/".$cek->photo);
+           }
+
+            $this->global->update('tbl_employee', $book, ['id' => $id]);
+           if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+
+            $this->session->set_flashdata('error', 'value');
+
+              } else {
+           $this->db->trans_commit();
+
+              }
+             $this->session->set_flashdata('success','value');
+
+             redirect($_SERVER['HTTP_REFERER']);
+         }else{
+           $this->session->set_flashdata('error','value');
+
+          redirect($_SERVER['HTTP_REFERER']);
+         }
+
+     }else{
+
+         echo "Gagal, gambar belum di pilih";
+         $this->upload->display_errors();
+         $this->session->set_flashdata('error','value');
+
+         redirect($_SERVER['HTTP_REFERER']);
+ }
+
 }
 }

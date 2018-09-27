@@ -11,9 +11,9 @@ var ChartsAmcharts = function() {
             "marginTop": 10,
             "marginBottom": 26,
 
-            "fontFamily": 'Open Sans',            
+            "fontFamily": 'Open Sans',
             "color":    '#888',
-            
+
             "dataProvider": [{
                 "year": 2009,
                 "income": 23.5,
@@ -326,13 +326,13 @@ var ChartsAmcharts = function() {
             "type": "serial",
             "theme": "light",
 
-            "fontFamily": 'Open Sans',            
+            "fontFamily": 'Open Sans',
             "color":    '#888888',
-            
+
             "pathToImages": Metronic.getGlobalPluginsPath() + "amcharts/amcharts/images/",
 
             "dataProvider": [{
-                "lineColor": "#b7e021",  
+                "lineColor": "#b7e021",
                 "date": "2012-01-01",
                 "duration": 408
             }, {
@@ -443,7 +443,7 @@ var ChartsAmcharts = function() {
                 "verticalGap": 0
             },
             "dataProvider": [{
-                "year": 2005,
+                "year": 2020,
                 "income": 23.5,
                 "expenses": 18.1
             }, {
@@ -509,7 +509,7 @@ var ChartsAmcharts = function() {
             "startDuration": 2,
 
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
 
             "dataProvider": [{
@@ -643,7 +643,7 @@ var ChartsAmcharts = function() {
             "theme": "light",
 
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
 
             "dataProvider": [{
@@ -695,27 +695,12 @@ var ChartsAmcharts = function() {
             "theme": "light",
 
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
 
             "dataProvider": [{
                 "country": "Lithuania",
-                "value": 260
-            }, {
-                "country": "Ireland",
-                "value": 201
-            }, {
-                "country": "Germany",
-                "value": 65
-            }, {
-                "country": "Australia",
-                "value": 39
-            }, {
-                "country": "UK",
-                "value": 19
-            }, {
-                "country": "Latvia",
-                "value": 10
+                "value": 200
             }],
             "valueField": "value",
             "titleField": "country",
@@ -756,7 +741,7 @@ var ChartsAmcharts = function() {
             "theme": "light",
 
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
 
             "dataProvider": [{
@@ -835,7 +820,7 @@ var ChartsAmcharts = function() {
             "theme": "light",
 
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
 
             "dataProvider": [{
@@ -2729,7 +2714,7 @@ var ChartsAmcharts = function() {
             map.fontFamily = 'Open Sans';
             map.fontSize = '13';
             map.color = '#888';
-            
+
             map.addTitle("Population of the World in 2011", 14);
             map.addTitle("source: Gapminder", 11);
             map.areasSettings = {
@@ -2788,9 +2773,9 @@ var ChartsAmcharts = function() {
             pathToImages: Metronic.getGlobalPluginsPath() + "amcharts/ammap/images/",
 
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
-            
+
             dataProvider: {
                 map: "worldLow",
                 linkToObject: "london",
@@ -3074,7 +3059,7 @@ var ChartsAmcharts = function() {
             "theme": "light",
             pathToImages: Metronic.getGlobalPluginsPath() + "amcharts/amcharts/images/",
             "fontFamily": 'Open Sans',
-            
+
             "color":    '#888',
             dataSets: [{
                 color: "#b0de09",

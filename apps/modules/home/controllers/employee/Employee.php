@@ -27,9 +27,16 @@ class Employee extends MX_Controller{
     $data['title']="| Employee Detail";
     $data['company']=$this->app->company()->result();
     $data['emp']=$this->app->editemployee($this->uri->segment(4));
+    $data['manager']=$this->app->getmanager(base64_decode($this->uri->segment(4)));
+    $data['umur']=$this->app->getUmur($this->uri->segment(4));
+    $data['kerja']=$this->app->getMasaKerja($this->uri->segment(4));
+    $data['family']=$this->app->getFamily($this->uri->segment(4))->result();
     $this->load->view('layout/head', $data);
     $this->load->view('employee/emp_ditel', $data);
     $this->load->view('layout/foot', $data);
   }
+  function uploadavatar(){
+    
+ }
 
 }

@@ -12,10 +12,12 @@ class Pilih extends MX_Controller{
       redirect('welcome/index','refresh');
     }
     //Codeigniter : Write Less Do More
+
   }
 
   function index()
   {
+    
     $data['company']=$this->app->getcompany_id()->result();
 
     $this->load->view('pilih',$data);
